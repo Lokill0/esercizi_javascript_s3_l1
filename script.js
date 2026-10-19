@@ -285,6 +285,14 @@ console.log(etaMedia);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+
+const utentiPerEta = [...utenti].sort((a, b) => {
+	return a.eta - b.eta;
+});
+
+console.log(utentiPerEta.map(utente => utente.nome));
+
+
 /* ESERCIZIO 15 — Chaining
    Componi una catena di metodi che:
    - filtra gli utenti attivi
@@ -294,3 +302,11 @@ console.log(etaMedia);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+
+const utentiAttiviOrdinati = utenti
+	.filter(utente => utente.attivo === true)
+	.map(utente => `${utente.nome} ${utente.cognome}`)
+	.sort((a, b) => a.localeCompare(b));
+
+console.log(utentiAttiviOrdinati);
